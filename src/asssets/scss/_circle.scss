@@ -1,0 +1,23 @@
+.circle {
+    width: 8px;
+    height: 8px;
+    background-color: $link-disable-clr;
+    border: none;
+    border-radius: 50%;
+    margin: 16px 0;
+    transition: all 1.2s;
+
+
+    &-active{
+        background-color: $link-active-clr;
+        transition: all 1.2s;
+
+    }
+}
+
+@media (min-width: 769px) {
+    .circle {
+        width: 12px;
+        height: 12px;
+    }
+}

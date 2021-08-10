@@ -1,0 +1,98 @@
+
+
+
+
+%btn {
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    outline: none;
+
+}
+
+.btn-primary {
+    @extend %btn;
+    background-color: $primary-clr;
+    color: $white-clr;
+    border: none;
+    transition: $transition;
+    justify-content: center;
+    padding: 8px 10px;
+    box-shadow: $shadow;
+
+    &:hover {
+        background-color: transparent;
+        color: $primary-clr;
+    }
+}
+
+
+
+.btn-secondary {
+    @extend %btn;
+    justify-content: space-between;
+    color: $primary-clr;
+    background-color: transparent;
+    border: none;
+    margin: 0 auto;;
+
+    & span {
+        margin-right: 8px;
+        transition: all .5s;
+        font-weight: 700;
+        
+    }
+
+    &:hover span {
+        margin-right: 16px;
+    }
+}
+
+.btn-tertiary {
+    @extend %btn;
+    background-color: $secondary-clr;
+    color: $primary-clr;
+    border: none;
+    transition: $transition;
+    justify-content: center;
+    padding: 10px 12px;
+    box-shadow: $shadow;
+    width: 80%;
+
+    &:hover {
+        background-color: $primary-clr;
+        color: $secondary-clr
+    }
+}
+
+.btn-search {
+    @extend %btn;
+    background-color: $primary-clr;
+    color: $secondary-clr;
+    border: none;
+    justify-content: center;
+    padding: 10px 12px;
+    transition: all .2s ease-in;
+    width: 40%;
+
+    &:hover {
+        background: $black-clr;
+    }
+
+}
+
+
+@media (min-width: 769px) {
+    .btn-primary {
+        padding: 10px 20px;
+    }
+
+    .btn-secondary {
+        margin: 0;
+        font-size: 16px;
+    }
+
+    .btn-tertiary {
+        padding: 8px 10px;
+    }
+}

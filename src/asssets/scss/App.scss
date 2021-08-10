@@ -1,0 +1,346 @@
+@import 'utils';
+@import 'config';
+@import 'buttons';
+@import 'icons';
+@import 'circle';
+@import 'background';
+@import 'item';
+
+
+
+.home {
+    padding: 0 5%;
+    position: relative;
+}
+
+.navbar {
+
+    padding: 12px 0;
+
+    position: fixed;
+    width: 90%;
+    top: 0;
+
+    .nav-center {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+    }
+
+    .logo{
+        width: 16%;
+    }
+}
+
+.bottom {
+    padding: 12px 0;
+
+    position: fixed;
+    width: 90%;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    
+
+    .group {
+        width: 80px;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+
+
+
+
+.right-nav {
+    position: fixed;
+    right: 5%;
+    top: 35%;
+}
+
+.side-nav {
+    background-image: url(./asssets/images/bkg-menu.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    width: 100%;
+    height: 100vh;
+    transition: all .5s ease-in;
+    transform: translate(-100%);
+    &-show {
+        transform: translate(0%);
+    }
+
+    .top {
+        display: flex;
+        justify-content: space-between;
+        padding: 8%;
+
+        .menu-items {
+            h3 {
+                margin-bottom: 0;
+                color: $secondary-clr;
+                cursor: pointer;
+                font-size: bold;
+            }
+
+            p {
+                font-size: 12px;
+                span {
+                    font-weight: bold;
+                    cursor: pointer;
+                    border-bottom: 1px solid transparent;
+                    &:hover {
+                        text-transform: underline;
+                        border-bottom: 1px solid $secondary-clr;
+                    }
+                }
+            }
+
+            .link {
+                padding-left: 24px;
+                
+            }
+
+            
+
+            @include link-color(1,$menu-clr-1);
+            @include link-color(2,$menu-clr-2);
+            @include link-color(3,$menu-clr-3);
+            @include link-color(4,$menu-clr-4);
+            @include link-color(5,$menu-clr-5);
+            @include link-color(6,$menu-clr-6);
+
+            display: grid;
+            grid-row-gap: 24px;
+        }
+    }
+
+    .bottom {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: $black-clr;
+        opacity: (.7);
+        width: 100%;
+        padding: 24px;
+
+
+
+        .location {
+            height: 100%;
+            
+
+            h4 {
+                font-size: 12px;
+                color: $white-clr;
+
+            }
+        }
+    }
+}
+
+.search {
+    background-image: url(./asssets/images/bkg-search.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    width: 100%;
+    height: 100vh;
+    transition: all .5s ease-in;
+    text-transform: lowercase;
+    transform: translate(-100%);
+    &-show {
+        transform: translate(0%);
+    }
+
+    &-top{
+        padding: 8%;
+
+        .icon-wrapper {
+            margin-left: auto;
+        }
+
+        .search-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 85%;
+            height: 36px;
+            margin: 24px auto;
+            padding: 0 16px;
+            border-radius: 25px;
+            border: 2px solid $secondary-clr;
+            
+            input {
+                height: 100%;
+                outline: none;
+                width: 100%;
+                padding-left: 16px;
+                color: $white-clr;
+                background-color: transparent;
+                border: none;
+
+                &::placeholder {
+                    color: $secondary-clr;
+                }
+            }
+
+        }
+
+        
+    }
+
+    &-bottom {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: $black-clr;
+        opacity: (.7);
+        width: 100%;
+        padding: 24px;
+
+
+        .location {
+            height: 100%;
+            
+
+            h4 {
+                font-size: 12px;
+                color: $white-clr;
+
+            }
+        }
+    }
+    
+    h2 {
+        font-weight: bold;
+        color: $secondary-clr;
+        margin: 24px auto;
+        text-align: center;
+    }
+}
+
+.results {
+    margin-top: 24px;
+    .rec.rec-arrow {
+        border: none;
+        background: transparent;
+        color: $secondary-clr;
+        box-shadow: none;
+
+        &:hover {
+            color: $primary-clr;
+            background: transparent;
+            box-shadow: none;
+        }
+
+        &:disabled {
+            visibility: hidden;
+        }
+
+        &:focus {
+            background: transparent;
+            box-shadow: none;
+
+        }
+    }
+
+    .no-result {
+        margin: 24px;
+        text-align: center;
+        text-transform: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        h3 {
+            color: $secondary-clr;
+        }
+    }
+
+    
+
+}
+
+@media (min-width: 768px) {
+    .navbar {
+        .logo{
+            width: 10%;
+        }
+    }
+
+    .bottom {
+    
+        .group {
+            width: 108px;
+        }
+    }
+
+    .side-nav {
+
+        .top {   
+            padding: 5%;
+
+            .menu-items {
+                grid-row-gap: 32px;
+            }
+        }
+
+        .bottom {
+            width: 100%;
+        }
+    }
+
+    .search {
+        &-top{
+            padding: 5%;
+            
+            .search-box {
+                width: 60%;
+                height: 36px;
+                margin: 24px auto;
+              
+            }
+        }
+    
+    }
+}
+
+
+@media (min-width: 1024px) {
+    .navbar {
+        .logo{
+            width: 6%;
+        }
+    }
+
+    .search {
+            .search-box {
+                width: 30%;
+                height: 36px;
+                margin: 24px auto;
+              
+            }
+        
+    
+    }
+}
+
+

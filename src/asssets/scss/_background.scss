@@ -1,0 +1,55 @@
+$set: ('one','two','three','four','five');
+
+%background {
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all 1.2s;
+
+}
+
+@each $var in $set {
+    .background-#{$var} {
+        @extend %background;
+        background-image: url(./asssets/images/bkg-#{$var}.jpg);
+    }
+}
+
+.background-content {
+    width: 80%;
+    margin: 0 10%;
+    position: absolute;
+    top: 25%;
+    text-align: center;
+    transition: all .5s ease-out;
+    transform: translateX(-150%);
+    background-color: rgba($white-clr, .1);
+    padding: 5%;
+
+  
+    &-show {
+        transform: translateX(0%);
+    }
+    h3:first-child{
+        text-transform: uppercase;
+    }
+
+}
+
+
+@media (min-width: 769px) {
+    .background-content {
+        margin: 0 10%;
+        position: absolute;
+        top: 28%;
+        text-align: left;
+        background-color: rgba($white-clr, 0);
+        padding: 0%;
+    
+
+        h3 {
+            width: 45%;
+        }
+    }
+}
